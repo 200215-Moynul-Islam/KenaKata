@@ -9,7 +9,7 @@ const authService = {
     const backendResponse = axiosResponse.data;
 
     if (backendResponse?.success) {
-      localStorage.setItem('token', backendResponse.data.access_token);
+      localStorage.setItem('token', backendResponse.access_token);
     }
 
     return backendResponse;
