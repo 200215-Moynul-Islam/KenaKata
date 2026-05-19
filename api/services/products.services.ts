@@ -13,6 +13,20 @@ const productService = {
 
     return axiosResponse.data;
   },
+
+  getFeatured: async () => {
+    const axiosResponse = await apiClient.get(endpoints.products.getAll);
+
+    const products = axiosResponse.data;
+
+    // take only first 8 products
+    const featured = products.slice(0, 8);
+
+    return {
+      success: true,
+      data: featured,
+    };
+  },
 };
 
 export default productService;
