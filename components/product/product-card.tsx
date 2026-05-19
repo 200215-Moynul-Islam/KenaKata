@@ -13,21 +13,16 @@ export default function ProductCard({ product }: ProductCardProps) {
   const imageUrl = product.images?.[0];
 
   return (
-    <Link href={`/products/${product.id}`} className="group block cursor-pointer">
+    <Link href={`/products/${product.id}`} className="group block">
       <div className="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container">
         <img
           src={imageUrl}
           alt={product.title}
-          className="
-            h-full w-full object-cover
-            transition-transform duration-500
-            group-hover:scale-105
-          "
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 
       <h3 className="mt-2 text-sm font-medium">{product.title}</h3>
-
       <p className="text-primary">${product.price}</p>
     </Link>
   );
