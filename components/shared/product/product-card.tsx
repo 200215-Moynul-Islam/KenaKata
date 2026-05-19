@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 type ProductCardProps = {
   product: {
     id: number;
@@ -9,7 +11,7 @@ type ProductCardProps = {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="group cursor-pointer">
+    <Link href={`/products/${product.id}`} className="group block">
       <div className="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container">
         <img
           src={product.images?.[0]}
@@ -25,6 +27,6 @@ export default function ProductCard({ product }: ProductCardProps) {
       <h3 className="mt-2 text-sm font-medium">{product.title}</h3>
 
       <p className="text-primary">${product.price}</p>
-    </div>
+    </Link>
   );
 }
