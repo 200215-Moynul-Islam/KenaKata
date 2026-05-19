@@ -3,6 +3,7 @@ import './globals.css';
 
 import AppThemeProvider from '@/context/theme-provider';
 import Header from '@/layouts/header';
+import Footer from '@/layouts/footer/footer';
 
 export const metadata: Metadata = {
   title: 'KenaKata.com',
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <AppThemeProvider>
           <Header />
           {children}
+          <Footer />
         </AppThemeProvider>
       </body>
     </html>
