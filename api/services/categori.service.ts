@@ -8,8 +8,14 @@ const categoryService = {
     return axiosResponse.data;
   },
 
-  getById: async (id: number) => {
-    const axiosResponse = await apiClient.get(endpoints.categories.getById(id));
+  getFeatured: async (limit = 4) => {
+    const axiosResponse = await apiClient.get(endpoints.categories.getFeatured(limit));
+
+    return axiosResponse.data;
+  },
+
+  getProducts: async (id: number) => {
+    const axiosResponse = await apiClient.get(`/categories/${id}/products`);
 
     return axiosResponse.data;
   },

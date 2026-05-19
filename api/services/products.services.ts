@@ -27,6 +27,12 @@ const productService = {
       data: featured,
     };
   },
+
+  getByCategoryId: async (id: number) => {
+    const axiosResponse = await apiClient.get(endpoints.products.getByCategoryId(id));
+
+    return axiosResponse.data;
+  },
 };
 
 export default productService;
