@@ -8,11 +8,13 @@ const endpoints = {
   products: {
     getAll: '/products',
     getById: (id: number) => `/products/${id}`,
+    getByCategoryId: (id: number) => `/categories/${id}/products`,
   },
 
   categories: {
     getAll: '/categories',
-    getById: (id: number) => `/categories/${id}`,
+    getFeatured: (limit: number) => `/categories?limit=${limit}`,
+    getProducts: (id: number) => `/categories/${id}/products`,
   },
 };
 
